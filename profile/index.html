@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../profile/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <section class="nav">
+        <div id="nav-placeholder"></div>
+    </section>
+
+    <section class="perfil">
+        <div class="row">
+            <div class="column">
+                <img src="/profile/img/perfilM.png" alt="">
+            </div>
+            <div class="column">
+                <h3>nome:</h3>
+                <p id="nome">nome <i class="bi bi-pencil" style="display: none;"></i></p>
+                <h3>email:</h3>
+                <p id="email">email <i class="bi bi-pencil" style="display: none;"></i></p>
+                <h3>senha:</h3>
+                <p id="senha">senha <i class="bi bi-pencil" style="display: none;"></i></p>
+            </div>
+            <div class="column">
+                <h3>CPF:</h3>
+                <p id="cpf">cpf <i class="bi bi-pencil" style="display: none;"></i></p>
+                <h3>Data de Nascimento:</h3>
+                <p id="nascimento">Nascimento <i class="bi bi-pencil" style="display: none;"></i></p>
+                <h3>sexo:</h3>
+                <p id="sexo">sexo <i class="bi bi-pencil" style="display: none;"></i></p>
+            </div>
+        </div>
+        <div class="btn">
+            <button class="delete">deletar conta</button><button class="edit">editar</button>
+        </div>
+    </section>
+    <section class="editar">
+        <div class="valor">
+            <h3>Digite o valor para editar</h3>
+            <form class="formEdit">
+                <input type="text">
+            </form>
+            <button type="submit">editar</button>
+        </div>
+    </section>
+</body>
+<script src="./js/profile.js"></script>
+</html>

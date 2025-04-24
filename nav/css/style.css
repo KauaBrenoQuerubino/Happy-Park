@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
+
+:root {
+    --button-color: #ff914d;
+    --secundary-color: #e46d24;
+}
+
+
+
+* {
+    font-family: "League Spartan";
+    font-size: 23px;
+}
+
+
+header, nav, ul {
+
+    display: flex;
+}
+
+header {
+    background-color: transparent;
+    justify-content: center;
+}
+
+nav {
+    width: 100%;
+    align-items: center;
+    padding: 0 20px;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+nav > .logo img {
+    height: 200px;
+}
+
+
+nav > .pages ul{
+    display: flex;
+    gap: 150px;
+    
+}
+
+nav > .pages ul li {
+    cursor: pointer;
+    list-style-type: none; 
+}
+
+nav > .btns {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+
+nav > .btns .perfil {
+    display: none;
+}
+
+nav > .btns .botaoAutenticacao a {
+    color: var(--button-color);
+}
+
+
+nav > .btns button{
+    cursor: pointer;
+    color: white;
+    background-color: var(--button-color);
+    border: none;
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+}
