@@ -19,23 +19,39 @@
             </div>
             <div class="column">
                 <h3>nome:</h3>
-                <p id="nome">nome <i class="bi bi-pencil" style="display: none;"></i></p>
+                <div class="campo">
+                  <p id="nome">nome</p> <i class="bi bi-pencil" style="display: none;"></i>
+
+                </div>
+              
                 <h3>email:</h3>
-                <p id="email">email <i class="bi bi-pencil" style="display: none;"></i></p>
+                <div class="campo">
+                  <p id="email">email</p> <i class="bi bi-pencil" style="display: none;"></i>
+
+                </div>
+              
                 <h3>senha:</h3>
-                <p id="senha">senha <i class="bi bi-pencil" style="display: none;"></i></p>
-            </div>
+                <div class="campo">
+                  <p id="senha">senha</p> <i class="bi bi-pencil" style="display: none;"></i>
+                </div>
+              </div>
             <div class="column">
                 <h3>CPF:</h3>
-                <p id="cpf">cpf <i class="bi bi-pencil" style="display: none;"></i></p>
+                <div class="campo">
+                    <p id="cpf">cpf</p> <i class="bi bi-pencil" style="display: none;"></i>
+                </div>
                 <h3>Data de Nascimento:</h3>
-                <p id="nascimento">Nascimento <i class="bi bi-pencil" style="display: none;"></i></p>
+                <div class="campo">
+                    <p id="nascimento">Nascimento </p><i class="bi bi-pencil" style="display: none;"></i>
+                </div>
                 <h3>sexo:</h3>
-                <p id="sexo">sexo <i class="bi bi-pencil" style="display: none;"></i></p>
+                <div class="campo">
+                    <p id="sexo">sexo </p><i class="bi bi-pencil" style="display: none;"></i>
+                </div>
             </div>
         </div>
         <div class="btn">
-            <button class="delete">deletar conta</button><button class="edit">editar</button>
+            <button class="delete">deletar conta</button><button class="edit">editar</button><button id="aceitar" style="display: none;">finalizar</button>
         </div>
     </section>
     <section class="editar">
@@ -44,7 +60,10 @@
             <form class="formEdit">
                 <input type="text">
             </form>
-            <button type="submit">editar</button>
+            <div class="btn">
+                <button type="submit" class="cancelar">cancelar</button>
+                <button type="submit">editar</button>
+            </div>
         </div>
     </section>
 </body>

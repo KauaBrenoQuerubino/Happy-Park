@@ -8,7 +8,7 @@
     --bg-edit-color: #9d9d9d91;
     --btn-bg-color: #ff914d;
     --delete-btn: #ff5757;
-    
+    --aceitar-btn: #00bf63
 }
 
 
@@ -85,7 +85,19 @@ body {
     height: 250px;
 }
 
+.perfil .row .column .campo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.perfil .row .column .campo i {
+    color: var(--secundary-color);
+    cursor: pointer;
+}
+
 .editar {
+    z-index: 1;
     display: none;
     position: absolute;
     background-color: var(--bg-edit-color);
@@ -94,9 +106,12 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    transition: 1.5s;
+    
 }
 
 .editar .valor {
+    z-index: 10000000;
     background-image: url(/img/BackgroundPadraoTransparentWhite.png);
     background-size: 200%;
     background-color: var(--secundary-color);
@@ -143,7 +158,7 @@ body {
     gap: 20px;
 }
 
-.delete, .edit {
+.delete, .edit, #aceitar {
     width: 200px;
     height: 40px;
     border-radius: 30px;
@@ -154,10 +169,13 @@ body {
     cursor: pointer;
 }
 
-.delete:hover, .edit:hover {
+.delete:hover, .edit:hover, #aceitar:hover {
     transform: scale(1.1);
 }
 
+#aceitar {
+    background-color: var(--aceitar-btn) ;
+}
 
 .delete {
     background-color: var(--delete-btn);
