@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuperar Senha</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <div id="mensagem"></div>
+    <div class="container">
+        <h2>Recuperar Senha</h2>
+      
+        <div id="step1">
+          <div class="flex">
+            <label for="email">Digite seu e-mail:</label>
+            <input type="email" id="email" required>
+            <button onclick="enviarCodigo()" id="btn1">Enviar código</button>
+          </div>
+        </div>
+        <div class="spinner" id="spinner"></div>
+        
+        <div id="step2" class="hidden">
+          <div class="flex">
+            <label for="codigo">Digite o código recebido:</label>
+            <input type="text" id="codigo" required>
+            <button onclick="verificarCodigo()">Verificar código</button>
+          </div>
+        </div>
+    
+        <div id="step3" class="hidden">
+          <div class="flex">
+            <label for="novaSenha">Nova Senha:</label>
+            <input type="password" id="novaSenha" required placeholder="Nova senha">
+            <label for="confirmarSenha">Confirmar Senha:</label>
+            <input type="password" id="confirmarSenha" required placeholder="Confirmar senha">
+            <button onclick="trocarSenha()">Alterar senha</button>
+          </div>
+        </div>
+      </div>
+</body>
+<script src="./js/script.js"></script>
+</html>

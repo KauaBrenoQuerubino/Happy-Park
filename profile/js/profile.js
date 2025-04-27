@@ -3,12 +3,12 @@
 
 document.addEventListener("DOMContentLoaded", async () => {
   
-  
    const icones = document.querySelectorAll(".bi-pencil");
    const editar = document.querySelectorAll(".edit");
    const aceitar = document.getElementById("aceitar");
 
-   
+   const mensagem = document.getElementById("mensagem");
+
    editar.forEach(btn => {
       btn.addEventListener('click', () => {
         aceitar.style.display = "inline"
@@ -49,6 +49,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
   });
 
+  
+
 
     try {
         
@@ -59,7 +61,9 @@ document.addEventListener("DOMContentLoaded", async () => {
                 
                 const LinkDiv = document.querySelector('.botaoAutenticacao');
                 const botaoDiv = document.querySelector('.perfil');
+                const sair = document.querySelector('.bi-box-arrow-left');
 
+                sair.style.display = "block"
                 botaoDiv.style.display = "block"
                 LinkDiv.style.display = "none";
               
@@ -93,7 +97,44 @@ document.addEventListener("DOMContentLoaded", async () => {
           sexo.textContent = "Outro";
         }
 
+        const img = document.getElementById("perfilFoto");
+            img.onerror = function() {
+            this.onerror = null; // evita loop
+            this.src = "/profile/img/padrao.png";
+        };
+
+        img.src = "/profile/img/" + dados.id + ".png";
         
+       
+
+        const btnEnviar = document.getElementById("btn-enviar").addEventListener('click', async () => {
+          const input = document.getElementById("imagem");
+          const arquivo = input.files[0];
+      
+          if (!arquivo) {
+            mensagem.style.display = 'flex';
+            mensagem.textContent = "Selecione uma imagem";
+            mensagem.style.backgroundColor = "#ff5757";
+
+            setTimeout(() => {
+              mensagem.style.display = 'none';
+              window.location.reload(1)
+            },  2000);
+            return;
+          }
+      
+          const formData = new FormData();
+          formData.append("arquivo", arquivo);
+          formData.append("id", dados.id);
+          const resposta = await fetch("http://localhost:8090/upload/salvar", {
+            method: "POST",
+            body: formData
+          });
+      
+          const resultado = await resposta.text();
+        } );
+      
+
         aceitar.addEventListener('click',async () => {
 
           const nome = document.getElementById("nome").textContent;
@@ -109,6 +150,34 @@ document.addEventListener("DOMContentLoaded", async () => {
             sexo = "F"
           }else{
             sexo = "O"
+          }
+
+          if(!nome || !email || !senha || !identificacao || !dataDaNascimento || !sexo){
+            mensagem.style.display = 'flex';
+            mensagem.textContent = "Os dados nao podem estar vazios";
+            mensagem.style.backgroundColor = "#ff5757";
+        
+            
+            setTimeout(() => {
+              mensagem.style.display = 'none';
+              window.location.reload(1)
+            },  2000);
+            
+            throw new Error("Error ao editar")
+          }
+
+          if(identificacao.length > 14 || identificacao.length < 11){
+            mensagem.style.display = 'flex';
+            mensagem.textContent = "Digite um cpf Valido";
+            mensagem.style.backgroundColor = "#ff5757";
+        
+            
+            setTimeout(() => {
+              mensagem.style.display = 'none';
+              window.location.reload(1)
+            },  2000);
+            
+            throw new Error("Error ao editar")
           }
           
           const usuario = {
@@ -141,10 +210,22 @@ document.addEventListener("DOMContentLoaded", async () => {
         icones.forEach(icon => {
           icon.style.display = "none"
         })
+        mensagem.style.display = 'flex';
+        mensagem.textContent = "Dados Atualizados com sucesso!";
+        mensagem.style.backgroundColor = "#00bf63"
         
+        setTimeout(() => {
+          mensagem.style.display = 'none';
+        },  5000);
 
       } catch (error) {
-        console.error("Erro ao enviar dados:", error);
+        mensagem.style.display = 'flex';
+        mensagem.textContent = "Erro ao atualizar dados.";
+        mensagem.style.backgroundColor = "#ff5757";
+        
+        setTimeout(() => {
+          mensagem.style.display = 'none';
+        },  5000);
       }
     })
         

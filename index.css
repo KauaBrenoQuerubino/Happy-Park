@@ -13,6 +13,7 @@
 }
 
 body {
+    overflow-x: hidden;
     background-image: url(img/BackgroundPadraoTransparent.png);
     background-color: var(--bg-color);
     background-size: 100%;
@@ -46,4 +47,85 @@ body {
 
 .nav { 
     width: 100%;
+    z-index: 1000;
+}
+
+.inicio {
+ 
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    
+}
+.inicio .container {
+    
+    margin: 0 100px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    height: 70vh;
+}
+
+.inicio .container .Texto {
+    height: 100%;
+   
+}
+
+.inicio .container .Texto h3 {
+    font-size: 56.1px;
+    width: 500px;
+    margin: 10px 20px;
+    margin-top: 50px;
+
+    font-style: normal;
+    letter-spacing: -1px;
+    font-weight: 900;
+    color: #fffdd9;
+
+ 
+    filter:
+    drop-shadow(1px 1px 0 var(--primary-color))
+    drop-shadow(-1px 1px 0 var(--primary-color))
+    drop-shadow(1px -1px 0 var(--primary-color))
+    drop-shadow(-1px -1px 0 var(--primary-color))
+    drop-shadow(3px 0px 0 var(--primary-color))
+    drop-shadow(-3px 0px 0 var(--primary-color))
+    drop-shadow(0px 3px 0 var(--primary-color))
+    drop-shadow(0px -3px 0 var(--primary-color));
+
+
+}
+
+.inicio .container .Texto p {
+    margin: 0 20px;
+    width: 400px;
+    color: var(--secundary-color);
+    font-weight: 700;
+}
+
+.inicio .container .Texto button {
+    margin-top: 30px;
+    margin-left: 10px;
+    cursor: pointer;
+    background-color: var(--secundary-color);
+    border: none;
+    font-size: 21px;
+    font-weight: 700;
+    color: white;
+    border-radius: 50px;
+    width: 250px;
+    height: 40px;
+    transition: 1s;
+}
+
+.inicio .container .imagem {
+    z-index: 1;
+    position: relative;
+    left: 200px;
+    top: 37px;
+}
+
+.inicio .container .imagem img{
+    height: 800px;
+
 }

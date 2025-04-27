@@ -74,3 +74,10 @@ nav > .btns button{
     width: 50px;
     border-radius: 50px;
 }
+
+nav > .btns .bi-box-arrow-left{
+    display: none;
+    cursor: pointer;
+    color: var(--button-color);
+    font-size: 30px;
+}

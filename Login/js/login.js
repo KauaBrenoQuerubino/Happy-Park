@@ -27,8 +27,9 @@ document.getElementById("formLogin").addEventListener("submit", async function (
             mensagem.style.backgroundColor = "#00bf63";
 
             localStorage.setItem("Token", dados.token)
-
-            window.location.href = "/"
+            setTimeout(() => {
+                window.location.href = "/"
+              },  2000);
 
         } else if (response.status === 409) {
             mensagem.style.visibility = 'visible';

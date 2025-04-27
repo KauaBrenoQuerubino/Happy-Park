@@ -12,7 +12,9 @@ document.addEventListener("DOMContentLoaded", async () => {
                 
                 const LinkDiv = document.querySelector('.botaoAutenticacao');
                 const botaoDiv = document.querySelector('.perfil');
+                const sair = document.querySelector('.bi-box-arrow-left');
 
+                sair.style.display = "block"
                 botaoDiv.style.display = "block"
                 LinkDiv.style.display = "none";
               

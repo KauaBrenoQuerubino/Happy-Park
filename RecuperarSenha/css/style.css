@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
+
+/*=======Variaveis======*/
+:root {
+    --bg-color: #ffde59;
+    --primary-color: #ff914d;
+    --secundary-color: #e46d24;
+}
+
+
+/*=======Styles======*/
+* {
+    font-family: "League Spartan";
+}
+
+body {
+    background-image: url(/img/BackgroundPadraoTransparent.png);
+    background-color: var(--bg-color);
+    background-repeat: repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    
+    animation: fundoSubindo 10000s linear infinite;
+}
+
+
+.spinner {
+       width: 40px;
+      height: 40px;
+      border: 4px solid #ccc;
+      border-top: 4px solid var(--secundary-color);
+      display: none;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin: 50px auto;
+      
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes fundoSubindo {
+  from {
+      background-position: 0 -100000px;
+  }
+  to {
+      background-position: 0 0%;
+  }
+}
+
+@keyframes aparecer {
+  0% {
+     opacity: 100%;
+  }
+  100% {
+     opacity: 0%;
+  } 
+}
+  .container {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 70vh;
+  }
+
+  .container h2 {
+    
+    font-style: normal;
+    letter-spacing: -1px;
+    font-size: 56.1px;
+    font-weight: 900;
+    color: #fffdd9;
+
+ 
+    filter:
+    drop-shadow(1px 1px 0 var(--primary-color))
+    drop-shadow(-1px 1px 0 var(--primary-color))
+    drop-shadow(1px -1px 0 var(--primary-color))
+    drop-shadow(-1px -1px 0 var(--primary-color))
+    drop-shadow(3px 0px 0 var(--primary-color))
+    drop-shadow(-3px 0px 0 var(--primary-color))
+    drop-shadow(0px 3px 0 var(--primary-color))
+    drop-shadow(0px -3px 0 var(--primary-color));
+
+
+}
+
+#mensagem {
+  visibility: hidden;
+  font-size: 30px;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70px;
+  width: 600px;
+  color: white;
+  transition: 1s;
+}
+
+
+  #step1 , #step2, #step3{
+    
+    background-image: url(/img/BackgroundPadraoTransparentWhite.png);
+    background-repeat: repeat;
+    background-size: 1000px;
+    background-color: var(--primary-color);
+    border-radius: 20px;
+    width: 400px;
+    height: 200px;
+    padding: 20px;
+
+  }
+
+  .flex{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+  .flex label {
+    
+    font-size: 25px;
+    font-weight: 600;
+    color: white;
+  }
+
+  input {
+    width: 70%;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border-radius: 30px;
+    border: none;
+  }
+  button {
+    font-size: 15px;
+    font-weight: 500;
+    width: 60%;
+    padding: 10px;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    border-radius: 30px;
+    cursor: pointer;
+  }
+  button:hover {
+    background-color: #45a049;
+  }
+  .hidden {
+    display: none;
+  }

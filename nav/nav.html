@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,16 +15,17 @@
             </div>
             <div class="pages">
                 <ul>
-                    <li>inicio</li>
-                    <li>inicio</li>
-                    <li>inicio</li>
-                    <li>inicio</li>
+                    <li onclick="window.location.href = '/'">inicio</li>
+                    <li>Atrações</li>
+                    <li>Ingressos</li>
+                    <li>Horários </li>
                 </ul>
             </div>
             <div class="btns">
                 <button class="cart"><i class="bi bi-cart-fill"></i></button>
                 <div class="botaoAutenticacao" id="teste"><a href="Cadastro">cadastrar</a>/<a href="Login">login</a></div>
-                <button class="perfil" onclick="window.location.href = 'profile'"><i class="bi bi-person-fill"></i></button>
+                <button class="perfil" onclick="window.location.href = '/profile'"><i class="bi bi-person-fill"></i></button>
+                <i class="bi bi-box-arrow-left" onclick="localStorage.removeItem('Token'); window.location.reload(1)"></i>
             </div>
         </nav>
     </header>

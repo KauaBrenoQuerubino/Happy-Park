@@ -1,21 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Perfil</title>
     <link rel="stylesheet" href="../profile/css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body>
+    <div id="mensagem"></div>
+    
     <section class="nav">
         <div id="nav-placeholder"></div>
     </section>
-
+    
     <section class="perfil">
         <div class="row">
             <div class="column">
-                <img src="/profile/img/perfilM.png" alt="">
+                <img src="/profile/img/padrao.png" alt="" id="perfilFoto">
+                <input type="file" id="imagem" accept="image/*">
+                <button  id="btn-enviar">Enviar</button>
             </div>
             <div class="column">
                 <h3>nome:</h3>
